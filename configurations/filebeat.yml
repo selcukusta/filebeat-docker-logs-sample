@@ -1,0 +1,10 @@
+filebeat.inputs:
+- type: docker
+  enabled: true
+  containers:
+    stream: "stdout"
+    ids:
+      - '*'
+  json.keys_under_root: true
+output.elasticsearch:
+  hosts: ["172.81.81.3:9200"]
